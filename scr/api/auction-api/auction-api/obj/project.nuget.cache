@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+sB0FYfgb5ggZLInrnXlTPoIhkwlgMTsS/niyr3ND+0kU63g9Trq1egEagc4LIj1d33gmjN9Z+AYQQq7cPKE1Q==",
+  "dgSpecHash": "iq/aQ8ae5eZO44vQJ7NyjqzZ0ntVjZdFSnNI1YECoIGd9mF2/oPWxGifalXZq0DRfkXNJHM8rEOtqLpkGWOPbA==",
   "success": true,
-  "projectFilePath": "C:\\projects\\2021-Q3-OKR-silent-auction\\scr\\api\\auction-api\\auction-api\\auction-api.csproj",
+  "projectFilePath": "C:\\projects\\OKRAuction\\scr\\api\\auction-api\\auction-api\\auction-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Drake.Lundstrom\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.9\\microsoft.aspnetcore.authentication.jwtbearer.5.0.9.nupkg.sha512",
     "C:\\Users\\Drake.Lundstrom\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

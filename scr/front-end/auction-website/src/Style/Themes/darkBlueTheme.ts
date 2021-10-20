@@ -1,19 +1,8 @@
-import {
-    BLACK,
-    BRIGHT_RED,
-    BROWN,
-    BURGUNDY,
-    BURNT_ORANGE,
-    CREAM,
-    DARK_NAVY,
-    GOLD,
-    GREY,
-    LIGHT_GREEN,
-    LIGHT_TURQUOISE,
-    NEUTRAL_BLUE,
-    OFF_WHITE, ROYAL_BLUE, ROYAL_PURPLE, SILVER, WHITE,
 
-  } from '../colors';
+
+import { DARK_NAVY, ROYAL_BLUE, ROYAL_PURPLE, NEUTRAL_BLUE, 
+  GOLD, SILVER, CREAM, LIGHT_GREEN, BROWN, BURNT_ORANGE, 
+  BRIGHT_RED, OFF_WHITE, BLACK, BURGUNDY, WHITE, LIGHT_TURQUOISE, GREY, LIGHT_BROWN } from '../Colors';
 
 import { Theme } from './Theme';
 export const darkBlueTheme = () : Theme => ({
@@ -30,8 +19,8 @@ export const darkBlueTheme = () : Theme => ({
   },
   text: {
     primary: CREAM,
-    secondary: LIGHT_GREEN,
-    tertiary: BROWN,
+    secondary: GREY,
+    tertiary: LIGHT_BROWN,
     quaternary: BURNT_ORANGE,
     negative: BRIGHT_RED,
   },

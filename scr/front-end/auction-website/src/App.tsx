@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { Router } from './Router';
 import styled from 'styled-components';
-import { darkBlueTheme } from './Style/Themes/darkBlueTheme';
+import { darkBlueTheme } from './Style/Themes/DarkBlueTheme';
 
 export const App = (): JSX.Element => (
   <ThemeProvider theme={darkBlueTheme()}>

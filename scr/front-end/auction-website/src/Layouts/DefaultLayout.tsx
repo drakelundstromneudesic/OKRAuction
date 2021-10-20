@@ -5,5 +5,5 @@ export const DefaultLayout = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: ${props => props.theme.background.color};
+  background-color: ${props => props.theme.background.layerOne};
 `;
