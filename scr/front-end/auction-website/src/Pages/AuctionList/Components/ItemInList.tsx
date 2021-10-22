@@ -19,7 +19,7 @@ export const ItemInList = ({ item }: ItemInListProps): JSX.Element => {
 
           <TertiaryText>{item.description}</TertiaryText>
           <HorizontalBox>
-            {item.bids.length > 0 ? (
+            {item.bids ? (
               <>
                 <SecondaryText>Current Bid: ${item.bids[0].amount} |</SecondaryText>
                 <SecondaryText>| Min Increase: ${item.minimumIncrease}</SecondaryText>{' '}

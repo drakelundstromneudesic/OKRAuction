@@ -13,9 +13,12 @@ namespace auction_api.DAO
         private readonly string connectionString;
         private readonly string defaultImageLink = "https://th.bing.com/th/id/R.1a7bc301df26f4a5bb8d51ca05904443?rik=xY8r%2bU3xUl6dNg&riu=http%3a%2f%2fassets.kogan.com%2ffiles%2fproduct%2fMYSTERY_BOX%2fMYSTERY_BOX_2.jpg&ehk=8Cpu1h69ejdxJR66C4ftmo16eENSKAF1gLTlrXUsw%2f0%3d&risl=&pid=ImgRaw&r=0";
 
-        public ItemDao(string dbConnectionString)
+        private readonly BidDao bidDao;
+
+        public ItemDao(string dbConnectionString, BidDao _bidDao)
         {
             connectionString = dbConnectionString;
+            bidDao = _bidDao;
         }
 
         public List<Item> GetAllItems()
@@ -35,7 +38,10 @@ namespace auction_api.DAO
                         items.Add(item);
                     }
                 }
-
+                foreach (Item item in items)
+                {
+                    item.Bids = bidDao.GetBidsByItem(item.Id);
+                }
             }
             catch (Exception ex)
             {
@@ -62,7 +68,10 @@ namespace auction_api.DAO
                         items.Add(item);
                     }
                 }
-
+                foreach (Item item in items)
+                {
+                    item.Bids = bidDao.GetBidsByItem(item.Id);
+                }
             }
             catch (Exception ex)
             {
@@ -89,7 +98,7 @@ namespace auction_api.DAO
                         item = ConvertReaderToItem(reader);
                     }
                 }
-
+                item.Bids = bidDao.GetBidsByItem(item.Id);
             }
             catch (Exception ex)
             {

@@ -19,6 +19,7 @@ namespace auction_api.Models
         public DateTime ClosingTime { get; set; }
         public decimal StartingBid { get; set; }
         public decimal MinimumIncrease { get; set; }
+        public List<Bid> Bids { get; set; }
 
 
 

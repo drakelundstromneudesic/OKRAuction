@@ -94,7 +94,7 @@ namespace auction_api
             services.AddSingleton<JwtGenerator>(tk => new JwtGenerator(Configuration["JwtSecret"]));
             services.AddSingleton<PasswordHasher>(ph => new PasswordHasher());
             services.AddTransient<BidDao>(m => new BidDao(connectionString));
-            services.AddTransient<ItemDao>(m => new ItemDao(connectionString));
+            services.AddTransient<ItemDao>(m => new ItemDao(connectionString, new BidDao(connectionString)));
             services.AddTransient<UserDao>(m => new UserDao(connectionString));
 
 
