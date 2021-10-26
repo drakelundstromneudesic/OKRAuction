@@ -29,7 +29,7 @@ namespace auction_api.DAO
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    var cmd = new SqlCommand("SELECT * FROM items ;", conn);
+                    var cmd = new SqlCommand("SELECT * FROM items  ORDER BY closing_time;", conn);
                     var reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -59,7 +59,7 @@ namespace auction_api.DAO
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    var cmd = new SqlCommand("SELECT * FROM items  WHERE is_active = 1 and is_sold = 0;", conn);
+                    var cmd = new SqlCommand("SELECT * FROM items  WHERE is_active = 1 and is_sold = 0 ORDER BY closing_time;", conn);
                     var reader = cmd.ExecuteReader();
 
                     while (reader.Read())
