@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using auction_api.Models;
 
 namespace auction_api.Controllers
 {
@@ -41,6 +42,14 @@ namespace auction_api.Controllers
         {
             var Items = itemDao.GetActiveItems();
             return Items.Any() ? Ok(Items) : (StatusCode(500, "Internal Server Error"));
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult AddAuctionItem(Item item)
+        {
+            var result = itemDao.AddAuctionItem(item);
+            return result ? Ok() : (StatusCode(500, "Internal Server Error"));
         }
 
     }

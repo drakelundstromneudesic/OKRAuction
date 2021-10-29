@@ -21,6 +21,14 @@ namespace auction_api.DAO
             bidDao = _bidDao;
         }
 
+
+
+
+        string addItemQuery = "INSERT INTO Items(name, description, seller_first_name, " +
+                "seller_last_name, seller_email, link_to_image, closing_time, starting_bid, minimum_increase) " +
+                "VALUES(@Name, @Description, @SellerFirstName, @SellerLastName, @SellerEmail, " +
+                "@LinkToImage, @ClosingTime, @StartingBid, @MinimumIncrease); ";
+
         public List<Item> GetAllItems()
         {
             var items = new List<Item>();
@@ -125,6 +133,37 @@ namespace auction_api.DAO
             item.StartingBid = Convert.ToDecimal(reader["starting_bid"]);
             item.MinimumIncrease = Convert.ToDecimal(reader["minimum_increase"]);
             return item;
+        }
+
+        public bool AddAuctionItem(Item item)
+        {
+            var resultId = false;
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    var cmd = new SqlCommand(addItemQuery, conn);
+                    cmd.Parameters.AddWithValue("@Name", item.Name);
+                    cmd.Parameters.AddWithValue("@Description", item.Description);
+                    cmd.Parameters.AddWithValue("@SellerFirstName", item.SellerFirstName);
+                    cmd.Parameters.AddWithValue("@SellerLastName", item.SellerLastName);
+                    cmd.Parameters.AddWithValue("@SellerEmail", item.SellerEmail);
+                    cmd.Parameters.AddWithValue("@LinkToImage", item.ImageLink);
+                    cmd.Parameters.AddWithValue("@ClosingTime", item.ClosingTime);
+                    cmd.Parameters.AddWithValue("@StartingBid", item.StartingBid);
+                    cmd.Parameters.AddWithValue("@MinimumIncrease", item.MinimumIncrease);
+
+                    int rowsEffected = cmd.ExecuteNonQuery();
+                    if (rowsEffected == 1) resultId = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return resultId;
         }
     }
 }

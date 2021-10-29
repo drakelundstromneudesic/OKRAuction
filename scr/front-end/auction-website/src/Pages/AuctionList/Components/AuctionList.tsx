@@ -22,9 +22,10 @@ export const AuctionList = (): JSX.Element => {
       <Header1>
         Auctions
         {allItems.map(item => (
-          <ItemInList item={item} />
+          <ItemInList item={item} key={item.id} />
         ))}
       </Header1>
+      <button onClick={() => console.log(allItems)} />
     </LayerTwoCard>
   );
 };
