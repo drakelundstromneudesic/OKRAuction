@@ -15,8 +15,8 @@ export const AuctionCountdown = (closingTime: string): string => {
 
     const startingText = 'This Auction closes in ';
     const dayText = days && days + 'days ';
-    const hourText = hours + ' hours';
-    const minuteAndSecondText = days <= 7 ? ' ' + minutes + 'mintues and ' + seconds + 'seconds.' : '.';
+    const hourText = hours + 'hours';
+    const minuteAndSecondText = days <= 7 ? ' ' + minutes + 'minutes and ' + seconds + 'seconds.' : '.';
 
     setResult(distance > 0 ? startingText + dayText + hourText + minuteAndSecondText : 'This Auction Has Ended');
 

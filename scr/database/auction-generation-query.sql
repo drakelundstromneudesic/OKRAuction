@@ -57,8 +57,8 @@ CREATE TABLE Bids (
 
 
 SET IDENTITY_INSERT Items ON
-INSERT INTO Items (id, name, description, seller_first_name, seller_last_name, seller_email, link_to_image, closing_time, starting_bid) 
-VALUES (1, 'Fancy Water Bottle', 'It is a really nice water bottle', 'Drake', 'Lundstrom', 'drakelundstrom@gmail.com', 'https://cdn.shopify.com/s/files/1/0519/7573/products/CrystalPointWaterBottles-25_2000x.jpg?v=1599329480' , '2021-11-28 12:05:20', 20);
+INSERT INTO Items (id, name, description, seller_first_name, seller_last_name, seller_email, link_to_image, closing_time, starting_bid, minimum_increase) 
+VALUES (1, 'Fancy Water Bottle', 'It is a really nice water bottle', 'Drake', 'Lundstrom', 'drakelundstrom@gmail.com', 'https://cdn.shopify.com/s/files/1/0519/7573/products/CrystalPointWaterBottles-25_2000x.jpg?v=1599329480' , '2021-11-28 12:05:20', 20, 5);
 
 INSERT INTO Items (id, name, description, seller_first_name, seller_last_name, seller_email, closing_time, starting_bid, minimum_increase) 
 VALUES (2, '1oz gold coin', 'literal 24k gold', 'Fancy', 'Pants', 'fake@gmail.com', '2021-10-11 12:05:20', 800, 50);

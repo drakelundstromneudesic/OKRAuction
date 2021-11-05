@@ -21,6 +21,7 @@ export const CREAM = '#FFFDD0'
 export const SKY_BLUE = '#87CEEB'
 export const NEUTRAL_BLUE = '#3E00FF'
 export const LIGHT_GREEN = '#B5FFD9'
+export const LIGHT_PURPLE = '#A865C9'
 
 export const GREY = '#CCCCCC'
 

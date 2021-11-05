@@ -11,7 +11,7 @@ type ItemInListProps = {
 
 export const ItemInList = ({ item }: ItemInListProps): JSX.Element => {
   return (
-    <LayerThreeCard key={item.id}>
+    <StyledLayerThreeCard key={item.id}>
       <HorizontalBox>
         <ItemThumbnail src={item.imageLink} />
         <VerticalBox>
@@ -29,9 +29,9 @@ export const ItemInList = ({ item }: ItemInListProps): JSX.Element => {
               <SecondaryText>Starting Bid: ${item.startingBid}</SecondaryText>
             )}
           </HorizontalBox>
-        </VerticalBox>{' '}
+        </VerticalBox>
       </HorizontalBox>
-    </LayerThreeCard>
+    </StyledLayerThreeCard>
   );
 };
 
@@ -42,9 +42,16 @@ const HorizontalBox = styled.div`
 const VerticalBox = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  box-sizing: border-box;
 `;
 
 const ItemThumbnail = styled.img`
-  width: 250px;
+  max-width: 250px;
+  width: 30vw;
   margin-right: 1vw;
+`;
+
+const StyledLayerThreeCard = styled(LayerThreeCard)`
+  width: 97%;
 `;

@@ -152,7 +152,7 @@ namespace auction_api.DAO
                     cmd.Parameters.AddWithValue("@LinkToImage", item.ImageLink);
                     cmd.Parameters.AddWithValue("@ClosingTime", item.ClosingTime);
                     cmd.Parameters.AddWithValue("@StartingBid", item.StartingBid);
-                    cmd.Parameters.AddWithValue("@MinimumIncrease", item.MinimumIncrease);
+                    cmd.Parameters.AddWithValue("@MinimumIncrease", (item.StartingBid % 10 + 1));
 
                     int rowsEffected = cmd.ExecuteNonQuery();
                     if (rowsEffected == 1) resultId = true;
