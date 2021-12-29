@@ -3,12 +3,6 @@
 
 name: Build and deploy ASP.Net Core app to Azure Web App - OKRNeudesicTest
 
-on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:
-
 jobs:
   build:
     runs-on: windows-latest
@@ -19,7 +13,7 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '5.0.x'
+          dotnet-version: "5.0.x"
           include-prerelease: true
 
       - name: Build with dotnet
@@ -38,7 +32,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'Production'
+      name: "Production"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -51,7 +45,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'OKRNeudesicTest'
-          slot-name: 'Production'
+          app-name: "OKRNeudesicTest"
+          slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E6004DF11DD94860B81FB016D4D4A06C }}
           package: .

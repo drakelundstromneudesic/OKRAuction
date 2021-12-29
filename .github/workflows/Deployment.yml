@@ -1,7 +1,6 @@
 name: Test Code Deploy
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches: [main]
     paths:
       - "./scr/api/auction-api/auction-api/**"
@@ -28,7 +27,6 @@ jobs:
           cd scr/front-end/auction-website/
           yarn install
           yarn run build
-          yarn run test
 
       - name: Upload Web Artifact
         uses: actions/upload-artifact@v2.2.4
