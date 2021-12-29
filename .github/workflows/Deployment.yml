@@ -27,7 +27,6 @@ jobs:
           # deploy to Azure Web App.
           cd scr/front-end/auction-website/
           yarn install
-          npx browserslist@latest --update-db
           yarn run build
           yarn run test
 
