@@ -27,7 +27,9 @@ jobs:
           # deploy to Azure Web App.
           cd scr/front-end/auction-website/
           yarn install
+          yarn run lint
           yarn run build
+          yarn run test
 
   buildAPI:
     name: "Build Verb Live API"
