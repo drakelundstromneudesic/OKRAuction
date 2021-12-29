@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: APIApp
-          path: "./scr/api/auction-api/auction-api//bin/net5.0"
+          path: "./scr/api/auction-api/auction-api/bin/net5.0"
           if-no-files-found: error
           retention-days: 30
 
