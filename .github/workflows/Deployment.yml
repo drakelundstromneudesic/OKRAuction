@@ -1,7 +1,7 @@
 name: Test Code Deploy
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - "./scr/api/auction-api/auction-api/**"
       - "./scr/front-end/auction-website/**"
