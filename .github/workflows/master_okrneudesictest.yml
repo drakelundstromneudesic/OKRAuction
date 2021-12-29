@@ -33,13 +33,11 @@ jobs:
           cd scr/api/auction-api/auction-api/
           dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
-      - name: Upload API Artifact
-        uses: actions/upload-artifact@v2.2.4
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
         with:
-          name: APIApp
-          path: "./scr/api/auction-api/auction-api/bin/net5.0"
-          if-no-files-found: error
-          retention-days: 30
+          name: .net-app
+          path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
     runs-on: windows-latest
