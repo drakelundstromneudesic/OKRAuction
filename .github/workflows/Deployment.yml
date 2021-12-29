@@ -1,10 +1,8 @@
 name: Test Code Deploy
 on:
   push:
-    branches: [master]
-    paths:
-      - "./scr/api/auction-api/auction-api/**"
-      - "./scr/front-end/auction-website/**"
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
@@ -26,7 +24,7 @@ jobs:
           # deploy to Azure Web App.
           cd scr/front-end/auction-website/
           yarn install
-          yarn run build
+          yarn start
 
       - name: Upload Web Artifact
         uses: actions/upload-artifact@v2.2.4
