@@ -1,4 +1,4 @@
-name: Verb Live Code Deploy
+name: Test Code Deploy
 on:
   pull_request:
     types: [closed]
@@ -26,8 +26,8 @@ jobs:
           # Build and test the project, then
           # deploy to Azure Web App.
           cd scr/front-end/auction-website/
-          npm install
-          npm start
+          yarn install
+          yarn start
 
   buildAPI:
     name: "Build Verb Live API"

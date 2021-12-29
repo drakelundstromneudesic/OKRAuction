@@ -9,8 +9,7 @@ export const useEnvironmentVariables = (): EnvironmentVariables => {
       : ((window as any).API_URI as string);
 
   const EnvironmentVars: EnvironmentVariables = {
-    // apiUri: checkedApiURI,
-    apiUri: 'https://localhost:44389',
+    apiUri: checkedApiURI,
   };
   return EnvironmentVars;
 };
