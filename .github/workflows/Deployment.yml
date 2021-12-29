@@ -31,6 +31,14 @@ jobs:
           yarn run build
           yarn run test
 
+      - name: Upload Web Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: WebApp
+          path: "scr/front-end/auction-website/build"
+          if-no-files-found: error
+          retention-days: 30
+
   buildAPI:
     name: "Build Verb Live API"
     runs-on: ubuntu-latest
