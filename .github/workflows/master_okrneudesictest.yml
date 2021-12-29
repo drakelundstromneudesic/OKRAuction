@@ -3,6 +3,12 @@
 
 name: Build and deploy ASP.Net Core app to Azure Web App - OKRNeudesicTest
 
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: windows-latest
@@ -17,7 +23,10 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: |
+          cd scr/api/auction-api/auction-api/
+          dotnet restore
+          dotnet build
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
