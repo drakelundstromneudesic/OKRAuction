@@ -34,6 +34,11 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
+      - task: PublishBuildArtifacts@1
+        inputs:
+          pathToPublish: "scr/front-end/auction-website/build"
+          artifactName: drop1
+
   buildAPI:
     name: "Build Verb Live API"
     runs-on: ubuntu-latest
