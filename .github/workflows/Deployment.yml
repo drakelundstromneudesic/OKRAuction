@@ -25,6 +25,8 @@ jobs:
           cd scr/front-end/auction-website/
           yarn install
           yarn run build
+          yarn global add serve
+          serve -s build
 
       - name: Upload Web Artifact
         uses: actions/upload-artifact@v2.2.4
