@@ -27,13 +27,11 @@ jobs:
           npm install
           npm run build --if-present
 
-      - name: Upload Web Artifact
-        uses: actions/upload-artifact@v2.2.4
-        with:
-          name: WebApp
-          path: "scr/front-end/auction-website/build"
-          if-no-files-found: error
-          retention-days: 30
+        - name: Upload artifact for deployment job
+         uses: actions/upload-artifact@v2
+          with:
+           name: node-app
+           path: .
 
   deploy:
     runs-on: ubuntu-latest

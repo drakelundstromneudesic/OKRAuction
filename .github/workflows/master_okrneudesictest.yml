@@ -22,7 +22,7 @@ jobs:
           dotnet-version: "5.0.x"
           include-prerelease: true
 
-      - name: dotnet build and publish
+      - name: dotnet build
         run: |
           cd scr/api/auction-api/auction-api/
           dotnet restore
