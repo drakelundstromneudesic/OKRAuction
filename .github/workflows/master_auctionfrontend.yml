@@ -50,6 +50,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: "AuctionFrontEnd"
-          slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_18653881FDFA40BCA6BD38E78DAFF5A7 }}
           package: .
