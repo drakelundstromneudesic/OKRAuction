@@ -5,7 +5,7 @@ import { useEnvironmentVariables } from './useEnviromentVariables';
 export const get = async <T,>(uri: string, isSecure: boolean = true, isOverrideUrl: boolean = false) => {
   const { url, header } = getRequestArgs(uri, isSecure, isOverrideUrl);
   try {
-    const response = await axios.get('https://localhost:44389' + uri); //url, header);
+    const response = await axios.get(getBaseUrl + uri); //url, header);
     return { status: response.status, data: response.data };
   } catch (errorResponse) {
     return getErrors(errorResponse);
