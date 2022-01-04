@@ -3,11 +3,9 @@ export type EnvironmentVariables = {
 };
 
 export const useEnvironmentVariables = (): EnvironmentVariables => {
-  const checkedApiURI =
-    ((window as any).API_URI as string) === '%SUBAPIURI%'
-      ? 'https://localhost:44389'
-      : ((window as any).API_URI as string);
-
+  const checkedApiURI = window.location.hostname.includes('localhost')
+    ? 'https://localhost:44389'
+    : 'https://okrneudesictest.azurewebsites.net';
   const EnvironmentVars: EnvironmentVariables = {
     apiUri: checkedApiURI,
   };
